@@ -11,6 +11,9 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+/**
+ *
+ */
 public class SurnameNamePatronymicInOneStringForm extends JPanel {
     private JTextField surnameNamePatronymic;
     private JButton switchButton;
@@ -42,7 +45,8 @@ public class SurnameNamePatronymicInOneStringForm extends JPanel {
         String value = surnameNamePatronymic.getText().trim();
         if (value.isEmpty())
             return new String[0];
-        else return value.split("\\s+");
+        else
+            return value.split("\\s+");
     }
     public void addActionListenerForSwitchAction (ActionListener actionListener) {
         switchButton.addActionListener(actionListener);
@@ -66,6 +70,11 @@ public class SurnameNamePatronymicInOneStringForm extends JPanel {
     public void setPerson(Person person) {
         surnameNamePatronymic.setText(person.toString());
     }
+
+    public JTextField getSurnameNamePatronymic() {
+        return surnameNamePatronymic;
+    }
+
     public void defaultCursorPosition() {
         surnameNamePatronymic.requestFocusInWindow();
     }
